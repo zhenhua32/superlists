@@ -1,7 +1,5 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-import time
 import unittest
+from selenium import webdriver
 
 
 class NewVistorTest(unittest.TestCase):
@@ -14,7 +12,7 @@ class NewVistorTest(unittest.TestCase):
         self.browser.quit()
 
     def test_can_start_a_list_and_retrieve_it_later(self):
-      # 打开首页
+        # 打开首页
         self.browser.get('http://localhost:8000')
 
         # 首页有 'To-Do' 这个词
