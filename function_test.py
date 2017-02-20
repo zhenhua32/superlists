@@ -40,7 +40,8 @@ class NewVistorTest(unittest.TestCase):
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
         self.assertTrue(
-            any(row.text == '1: Buy an apple' for row in rows)
+            any(row.text == '1: Buy an apple' for row in rows),
+            "New to-do item did not appear in table"
         )
 
         # 页面上又显示了一个文本框, 可以再次输入待办事项
