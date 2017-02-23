@@ -2,9 +2,10 @@ import unittest
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from django.test import LiveServerTestCase
 
 
-class NewVistorTest(unittest.TestCase):
+class NewVistorTest(LiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Chrome()
@@ -20,7 +21,7 @@ class NewVistorTest(unittest.TestCase):
 
     def test_can_start_a_list_and_retrieve_it_later(self):
         # 打开首页
-        self.browser.get('http://localhost:8000')
+        self.browser.get(self.live_server_url)
         time.sleep(3)
 
         # 首页有 'To-Do' 这个词
